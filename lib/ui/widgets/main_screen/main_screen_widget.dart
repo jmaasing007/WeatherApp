@@ -11,7 +11,7 @@ class MainScreenWidget extends StatelessWidget {
     final model = context.watch<MainScreenModel>();
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xffb2ebf2),
       body:
           model.forecastObject?.location?.name != null && model.loading == false
               ? _ViewWidget()

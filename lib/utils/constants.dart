@@ -1,4 +1,3 @@
-// ignore_for_file: constant_identifier_names
 
 import 'package:flutter/material.dart';
 
@@ -6,10 +5,9 @@ const primaryColor = Color(0xff2c2c2c);
 const blackColor = Colors.black;
 const whiteColor = Colors.white;
 const greyColor = Color(0xffc4c4c4);
-const bgGreyColor = Colors.lightBlueAccent;
+const bgGreyColor = Color(0xff80deea);
 const darkGreyColor = Colors.blueGrey;
 
-// custom Text Widget
 Widget appText(
     {FontWeight isBold = FontWeight.normal,
     Color color = blackColor,
@@ -31,7 +29,6 @@ Widget appText(
   );
 }
 
-// for displaying snackbars
 showSnackBar(BuildContext context, String text, {Color color = primaryColor}) {
   return ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
@@ -42,7 +39,7 @@ showSnackBar(BuildContext context, String text, {Color color = primaryColor}) {
   );
 }
 
-// Custom ListTile for MainScreen
+
 Widget customListTile({
   required String first,
   required String second,
