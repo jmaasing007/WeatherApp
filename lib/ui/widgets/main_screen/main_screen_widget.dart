@@ -112,7 +112,6 @@ class CityInfoWidget extends StatelessWidget {
     final snapshot = model.forecastObject;
     var city = snapshot!.location?.name;
     var temp = snapshot.current?.tempC!.round();
-    var feelTemp = snapshot.current?.feelslikeC;
     var url =
         'https://${((snapshot.current!.condition!.icon).toString().substring(2)).replaceAll("64", "128")}';
 
@@ -141,7 +140,6 @@ class CityInfoWidget extends StatelessWidget {
               size: 70,
               text: '$temp°',
             ),
-            appText(size: 20, text: '$feelTemp°', color: darkGreyColor),
           ],
         ),
       ],
@@ -187,19 +185,19 @@ class BarometerWidget extends StatelessWidget {
                     first: 'Temperature:',
                     second: ' $temperature °C',
                     icon: Icons.thermostat,
-                    iconColor: Colors.orange,
+                    iconColor: Colors.red,
                   ),
                   customListTile(
                     first: 'Humidity:',
                     second: ' $humidity %',
                     icon: Icons.water_drop_outlined,
-                    iconColor: Colors.blueGrey,
+                    iconColor: Colors.blueAccent
                   ),
                   customListTile(
                     first: 'Pressure:',
                     second: ' $pressure hPa',
                     icon: Icons.speed,
-                    iconColor: Colors.red[300]!,
+                    iconColor: Colors.green[300]!,
                   ),
                 ],
               ),

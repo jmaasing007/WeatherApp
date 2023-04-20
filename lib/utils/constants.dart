@@ -6,8 +6,8 @@ const primaryColor = Color(0xff2c2c2c);
 const blackColor = Colors.black;
 const whiteColor = Colors.white;
 const greyColor = Color(0xffc4c4c4);
-const bgGreyColor = Color(0xfffdfcfc);
-const darkGreyColor = Color(0xff9a9a9a);
+const bgGreyColor = Colors.lightBlueAccent;
+const darkGreyColor = Colors.blueGrey;
 
 // custom Text Widget
 Widget appText(
