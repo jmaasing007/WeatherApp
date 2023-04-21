@@ -8,7 +8,7 @@ import 'package:weathet_app/utils/location.dart';
 class WeatherApi {
   final _client = HttpClient();
 
-  static const _host = Constants.WEATHER_BASE_SCHEME + Constants.WEATHER_BASE_URL_DOMAIN;
+  static const _host = Constants.weatherbasescheme + Constants.weatherbaseurldomain;
 
   Uri _makeUri(String path, [Map<String, dynamic>? parameters]) {
     final uri = Uri.parse('$_host$path');
@@ -26,7 +26,7 @@ class WeatherApi {
 
     if (cityName!=null && cityName.isNotEmpty) {
       parameters = {
-        'key': Constants.WEATHER_APP_ID,
+        'key': Constants.weatherappid,
         'q': cityName,
         'days': '1',
       };
@@ -35,13 +35,13 @@ class WeatherApi {
     await location.determinePosition();
       String fullLocation = '${location.latitude},${location.longitude}';
       parameters = {
-        'key': Constants.WEATHER_APP_ID,
+        'key': Constants.weatherappid,
         'q': fullLocation,
         'days': '1',
       };
     }
 
-    final url = _makeUri(Constants.WEATHER_FORECAST_PATH, parameters);
+    final url = _makeUri(Constants.weatherforeccastpath, parameters);
 
     log('request: ${url.toString()}');
     final request = await _client.getUrl(url);
